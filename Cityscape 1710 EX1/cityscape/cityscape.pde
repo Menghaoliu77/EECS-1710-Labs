@@ -1,5 +1,5 @@
 color bgColor = color(204,229,255);
-float circleSize= (random(3,8));
+float circleSize= (random(4,8));
 
 void setup() {
   size(800,950);
@@ -39,6 +39,7 @@ void setup() {
   rect(310, 280, 10, 100);
   rect(8, 520, 10, 50);
   rect(0, 545, 50, 10);
+  frameRate(12);
 }
 
 void draw(){
