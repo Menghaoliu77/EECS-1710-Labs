@@ -1,31 +1,32 @@
-PImage img1, img2, img3;
-float x = 300;
-float y = 300;
-float s = 100;
-float speed = 3;
+PImage sand, butter, monkey;
+float x = 200, y = 200, s = 109, t = 133, z = 3, r = 1;
 
 void setup() {
-  size(640, 480, P2D);
+  size(780, 564, P2D);
   
-  img1 = loadImage("sandbeach.png");
-  img2 = loadImage("butterfly.png");
-  img3 = loadImage("peppa pig.png");
+  sand = loadImage("sandbeach.png");
+  butter = loadImage("butterfly.png");
+  monkey = loadImage("monkey.png");
   
 }
 
 void draw() {
-  imageMode(CORNER);
-  image(img1, 0, 0, width, height);
+  background(sand);
   
   imageMode(CENTER);
-  image(img2, mouseX, mouseY, 50, 50);
+  image(butter, mouseX, mouseY, 30, 30);
   
   imageMode(CORNER);
-  image(img3, x, y, s, s);
-  x += speed;
+  image(monkey, x, y, s, t);
+  x += z;
+  y += r;
   
-  if (x > width || x <0) {
-    speed *= -1;
+  if (x > (width - s) || x < 0) {
+    z *= -1;
+  } 
+  
+  if (y > (height - t) || y < 0) {
+    r *= -1;
   }
   
 }
